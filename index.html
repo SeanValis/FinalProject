@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>
+
+
+<script>
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} 
+
+</script>
+</head>
+
+
+<div class="topnav" id="myTopnav">
+  <a href="index.html" class="active">Home</a>
+  <a href="signup.html">Sign up for free!</a>
+  <a href="about.html">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div> 
+<body style="background-color:#B695C0;">
+
+
+<!-- Container element -->
+<div class="parallax">
+<div class="caption">
+  <span class="border">TOP CLASS GYM</span>
+  </div>
+</div> 
+
+</div>
+<div style="height:1200px;background-color:purple; " >
+<br/>
+<br/>
+<br/>
+<div class= "textbox">
+<br/>
+<center>Locations all across the city!</center>
+<br/>
+<img src="map.gif" class= "map">
+<br/>
+<center><a href="https://goo.gl/maps/qSD53id6jxeLP8rm6">Find your closest gym here<a></center>
+<br/>
+</div>
+<br/>
+<br/>
+<div class= "textbox">
+<br/>
+<center>We are keeping our equipment sanitized<br/> in this world without sanity.</center>
+<br/>
+<img src="clean.jpeg" class= "clean">
+<br/>
+<center>Going above and beyond the CDC guidelines to keep you safe.</center>
+<br/>
+</div>
+</div>
+
+
+<h2 style="text-align:center">Photos of our gyms</h2>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="gym1.jpeg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="gym2.jpeg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="gym3.jpeg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="gym4.jpeg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="gym5.jpeg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="gym6.jpeg" style="width:100%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="gym1.jpeg" style="width:100%" onclick="currentSlide(1)" alt="Williamsburg">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gym2.jpeg" style="width:100%" onclick="currentSlide(2)" alt="SoHo">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gym3.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Astoria">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gym4.jpeg" style="width:100%" onclick="currentSlide(4)" alt="Red Hook">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gym5.jpeg" style="width:100%" onclick="currentSlide(5)" alt="Upper West Side">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="gym6.jpeg" style="width:100%" onclick="currentSlide(6)" alt="Astoria">
+    </div>
+  </div>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
+<hl>
+</body>
+<footer class="footer-distributed">
+
+<center>
+Follow our social media:
+<br>
+<a href="https://www.twitter.com"><img src=twitter.png height="50px" width="50px"></a>
+<a href="https://www.instagram.com"><img src=instagram.png height="50px" width="50px"></a>
+<a  href="https://www.facebook.com"><img src=facebook.png height="50px" width="50px"></a>
+<br/>
+(555)985-5123
+<br/>
+98 S 4th St space b, Brooklyn, NY 11249
+</center>
+</footer>
+
+
+</html>

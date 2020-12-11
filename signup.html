@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>
+
+
+<script>
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} 
+
+
+		function doClear()
+{
+	document.SignupForm.customer.value = "";
+	document.SignupForm.address.value = "";
+	document.SignupForm.city.value = "";
+	document.SignupForm.state.value = "";
+	document.SignupForm.zip.value = "";
+	document.SignupForm.phone.value = "";
+
+	document.SignupForm.sizes[0].checked = false;
+	document.SignupForm.sizes[1].checked = false;
+	document.SignupForm.sizes[2].checked = false;
+
+	document.SignupForm.toppings[0].checked = false;
+        document.SignupForm.toppings[1].checked = false;
+        document.SignupForm.toppings[2].checked = false;
+        document.SignupForm.toppings[3].checked = false;
+        document.SignupForm.toppings[4].checked = false;
+        document.SignupForm.toppings[5].checked = false;
+	return;
+}
+
+function doSubmit()
+{
+	if (validateText() == false)
+	{
+		alert("Required data misssing in Step 1");
+		return;
+	}
+	if (validateRadio() == false)
+	{
+		alert("Required data missing in Step 2");
+		return;
+	}
+	alert("Your pizza order has been submitted.");
+	return;
+}
+
+function validateText()
+{
+	var customer = document.SignupForm.customer.value;
+	if(customer.length == 0) return false;
+	var address = document.SignupForm.address.value;
+	if(address.length == 0) return false;
+	var city = document.SignupForm.city.value;
+	if(address.length == 0) return false;
+	var phone = document.SignupForm.phone.value;
+	if (phone.length == 0) return false;
+	return true;
+}
+
+function validateRadio()
+{
+	if (document.SignupForm.sizes[0].checked) return true;
+        if (document.SignupForm.sizes[1].checked) return true;
+        if (document.SignupForm.sizes[2].checked) return true;
+        
+}
+	</script>
+</script>
+</head>
+
+
+<div class="topnav" id="myTopnav">
+  <a href="index.html" class="active">Home</a>
+  <a href="signup.html">Sign up for free!</a>
+  <a href="about.html">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div> 
+
+<body  style="background-color:#B695C0;">
+<!-- Container element -->
+<div class="parallax">
+<div class="caption">
+  <span class="border">SIGN UP SHEET</span>
+  </div>
+</div> 
+
+
+<center>
+
+<table>
+<thead>
+<th width="100">Workout package</th>
+<th width="200">Price(monthly)</th>
+<th width="500">Description</th>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Basic</td>
+<td style="text-align:center">$24.99</td>
+<td style="text-align:center">Workout 24/7 at one of our locations!</td>
+</tr>
+<tr>
+<td style="text-align:center">Bonus</td>
+<td style="text-align:center">$29.99</td>
+<td style="text-align:center">Workout 24/7 at any of our locations!</td>
+</tr>
+<tr>
+<td style="text-align:center">Best</td>
+<td style="text-align:center">$39.99</td>
+<td style="text-align:center">Workout 24/7 at any of our locations! All lessons offered included!</td>
+</tr>
+</tbody>
+</table>
+
+<center>
+
+
+	<body>
+		<form name="SignupForm">
+		<h1>Top Class Gym Sign up</h1>
+		<p>
+		<h4>Step 1: Enter your name, address, and phone number:</h4>
+		<font face="Courier New">
+			Name: &nbsp;&nbsp;&nbsp;<input name="customer" size="50"
+			type="text"><br>
+			Address: <input name="address" size="50" type="text"><br>
+			City: &nbsp;&nbsp;&nbsp;<input name="city" size="15" type="text">
+			State: <input name="state" size="2" type="TEXT">
+			Zip: <input name="zip" size="5" type="text"><br>
+			Phone: &nbsp;&nbsp;<input name="phone" size="50" type="text"><br>
+		</font>
+		</p>
+		<p>
+		<h4>Step 2: Select the workout package you'd like:</h4>
+		<font face="Courier New">
+			<input name="sizes" type="radio">Basic
+			<input name="sizes" type="radio">Bonus
+			<input name-"Sizes" type="radio">Best<br>
+		</font>
+		</p>
+		<p>
+		<h4>Step 3: Enter in your Credit/Debit Information:</h4>
+            Card Number: <input name="cardNum" size="16" type="text"><br>
+            Security Number: <input name="secure" size="4" type="text"><br>
+            Expiration Date: <input name="date" size="5" type="text"><br>
+		</p>
+		<input type="button" value="Submit Order" onClick="doSubmit()">
+		<input type="button" value="Clear Entries" onClick="doClear()">
+		</form>
+</body>
+
+<footer class="footer-distributed">
+
+<center>
+Follow our social media:
+<br>
+<a href="https://www.twitter.com"><img src=twitter.png height="50px" width="50px"></a>
+<a href="https://www.instagram.com"><img src=instagram.png height="50px" width="50px"></a>
+<a  href="https://www.facebook.com"><img src=facebook.png height="50px" width="50px"></a>
+<br/>
+(555)985-5123
+<br/>
+98 S 4th St space b, Brooklyn, NY 11249
+</center>
+</footer>
+
+</html>
